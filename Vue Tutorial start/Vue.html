@@ -12,7 +12,8 @@
     <div id="app">
         <input type="text" v-on:input="changeTitle">
          <p>{{ title }}</p>
-        </div>
+         <p>{{ sayHello() }}</p>
+    </div>
 
 <script>
     new Vue({
@@ -23,6 +24,9 @@
   methods: {
   	changeTitle: function(event){
     	this.title = event.target.value;
+    },
+    sayHello: function(){
+        return 'Hello!';
     }
   }
 });
