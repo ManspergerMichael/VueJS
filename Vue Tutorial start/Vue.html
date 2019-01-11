@@ -12,14 +12,16 @@
     <div id="app">
         <input type="text" v-on:input="changeTitle">
          <p>{{ title }}</p>
-         <p>{{ sayHello() }}</p>
+         <!--<p>{{ sayHello() }} - <a href="{{ link }}">Google</a></p> Cant use curly braces in any html attribute only on text -->
+         <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
     </div>
 
 <script>
     new Vue({
 	el: '#app',
   data: {
-  	title: 'Hello World!'
+  	title: 'Hello World!',
+    link: 'HTTPS://www.google.com'
   },
   methods: {
   	changeTitle: function(event){
