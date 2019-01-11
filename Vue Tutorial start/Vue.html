@@ -26,7 +26,8 @@
     	this.title = event.target.value;
     },
     sayHello: function(){
-        return 'Hello!';
+        //return 'Hello!';
+        return this.title; //using this.property gives proxy access to the data field.
     }
   }
 });
