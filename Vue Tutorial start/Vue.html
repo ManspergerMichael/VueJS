@@ -13,7 +13,7 @@
         <input type="text" v-on:input="changeTitle">
          <p>{{ title }}</p>
          <!--<p>{{ sayHello() }} - <a href="{{ link }}">Google</a></p> Cant use curly braces in any html attribute only on text -->
-         <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+         <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p> <!--can run functions withing string introplation -->
     </div>
 
 <script>
@@ -29,7 +29,7 @@
     },
     sayHello: function(){
         //return 'Hello!';
-        return this.title; //using this.property gives proxy access to the data field.
+        return this.link; //using this.property gives proxy access to the data field.
     }
   }
 });
