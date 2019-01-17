@@ -10,8 +10,8 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-on:input="changeTitle">
-         <p>{{ title }}</p>
+        <!-- <input type="text" v-on:input="changeTitle"> -->
+         <h1 v-once >{{ title }}</h1>
          <!--<p>{{ sayHello() }} - <a href="{{ link }}">Google</a></p> Cant use curly braces in any html attribute only on text -->
          <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p> <!--can run functions withing string introplation -->
     </div>
@@ -19,7 +19,7 @@
 <script>
     new Vue({
 	el: '#app',
-  data: {
+    data: {
   	title: 'Hello World!',
     link: 'HTTPS://www.google.com'
   },
