@@ -7,14 +7,14 @@
     <!-- 2) Output your age, multiplied by 3 -->
     <p>{{Age * 3}}</p>
     <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
-    <p></p>
+    <p>{{RandFloat()}}</p>
     <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
     <div>
-        <img style="width:100px;height:100px">
+        <img style="width:100px;height:100px" v-bind:src="picLoc">
     </div>
     <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
     <div>
-        <input type="text">
+        <input type="text" v-bind:value="Name">
     </div>
 </div>
 
@@ -23,11 +23,14 @@
     el: "#exercise",
     data: {
         Name: 'Michael',
-        Age: 33
+        Age: 33,
+        picLoc: 'GS.jpeg'
+    
     },
     methods: {
-        toggle: function (todo) {
-            todo.done = !todo.done
+        RandFloat: function () {
+            var num = Math.random();
+            return num;
         }
     }
 })
