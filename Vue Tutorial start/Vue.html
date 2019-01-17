@@ -10,10 +10,13 @@
 </head>
 <body>
     <div id="app">
-        <!-- <input type="text" v-on:input="changeTitle"> -->
+        <input type="text" v-on:input="changeTitle">
          <h1 v-once >{{ title }}</h1>
          <!--<p>{{ sayHello() }} - <a href="{{ link }}">Google</a></p> Cant use curly braces in any html attribute only on text -->
          <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p> <!--can run functions withing string introplation -->
+         <hr>
+         <p>{{finishedLink}}</p> <!--Vue only renders text not HTML, this prevents Cross scripting attacks-->
+         <p v-html="finishedLink"></p><!--This is vunerable to cross scripting, use only if you are certan of the source-->
     </div>
 
 <script>
@@ -21,7 +24,8 @@
 	el: '#app',
     data: {
   	title: 'Hello World!',
-    link: 'HTTPS://www.google.com'
+    link: 'HTTPS://www.google.com',
+    finishedLink: '<a href="http://google/com">Google</a>'
   },
   methods: {
   	changeTitle: function(event){
