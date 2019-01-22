@@ -1,7 +1,9 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <div id="app">
     <!-- Can use any event for button included in the DOM-->
-    <button v-on:click="incement">Click Me</button>
+    <!-- passing arguments to functions-->
+    <!-- event objects are created everytime an event occurs. These can be passed as parameters. $event is the vue keyword for passing the object-->
+    <button v-on:click="incement(2, $event)">Click Me</button>
     <p>{{counter}}</p>
     <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
 </div>
@@ -15,9 +17,9 @@ new Vue({
         y: 0
     },
     methods: {
-        incement: function()
+        incement: function(step, event)
         {
-            this.counter ++;
+            this.counter += step;
         },
         updateCoordinates: function(event)
         {
