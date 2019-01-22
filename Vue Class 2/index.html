@@ -5,9 +5,11 @@
     <!-- event objects are created everytime an event occurs. These can be passed as parameters. $event is the vue keyword for passing the object-->
     <button v-on:click="incement(2, $event)">Click Me</button>
     <p>{{counter}}</p>
-    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
     <!--Stop modifyer used to stop propigation of mouse event-->
     - <span v-on:mousemove.stop="">DEAD SPOT</span>
+    </p>
+    <input type="text" v-on:keyup="alertMe">
 </div>
 
 <script>
@@ -32,6 +34,10 @@ new Vue({
         dummy: function(event)
         {
             event.stopPropagation();
+        },
+        alertMe: function()
+        {
+            alert('Alert!');
         }
     }
 });
