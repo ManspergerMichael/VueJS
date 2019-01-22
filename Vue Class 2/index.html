@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<div id="app">
+    <!-- Can use any event for button included in the DOM-->
+    <button v-on:click>Click Me</button>
+    <p>{{counter}}</p>
+</div>
+
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        counter: 0
+    }
+});
+</script>
