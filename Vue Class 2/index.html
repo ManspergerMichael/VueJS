@@ -3,18 +3,27 @@
     <!-- Can use any event for button included in the DOM-->
     <button v-on:click="incement">Click Me</button>
     <p>{{counter}}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
 </div>
 
 <script>
 new Vue({
     el: '#app',
     data: {
-        counter: 0
+        counter: 0,
+        x: 0,
+        y: 0
     },
     methods: {
         incement: function()
         {
             this.counter ++;
+        },
+        updateCoordinates: function(event)
+        {
+            //clientX and clientY are default proerties of event
+            this.x = event.clientX;
+            this.y = event.clientY;
         }
     }
 });
