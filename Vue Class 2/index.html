@@ -9,7 +9,7 @@
     <!--Stop modifyer used to stop propigation of mouse event-->
     - <span v-on:mousemove.stop="">DEAD SPOT</span>
     </p>
-    <input type="text" v-on:keyup="alertMe">
+    <input type="text" v-on:keyup.enter.space="alertMe">
 </div>
 
 <script>
