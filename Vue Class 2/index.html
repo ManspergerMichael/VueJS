@@ -6,6 +6,8 @@
     <button v-on:click="incement(2, $event)">Click Me</button>
     <p>{{counter}}</p>
     <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+    <!--Stop modifyer used to stop propigation of mouse event-->
+    - <span v-on:mousemove.stop="">DEAD SPOT</span>
 </div>
 
 <script>
@@ -26,6 +28,10 @@ new Vue({
             //clientX and clientY are default proerties of event
             this.x = event.clientX;
             this.y = event.clientY;
+        },
+        dummy: function(event)
+        {
+            event.stopPropagation();
         }
     }
 });
