@@ -4,7 +4,9 @@
     <!-- passing arguments to functions-->
     <!-- event objects are created everytime an event occurs. These can be passed as parameters. $event is the vue keyword for passing the object-->
     <button v-on:click="incement(2, $event)">Click Me</button>
-    <p>{{counter}}</p>
+    <button v-on:click="counter ++">Click Me</button>
+    <!--Can do calculations and tirnary in string interpolation-->
+    <p>{{counter * 2 > 10 ? 'Geater than 10' : 'Smaller than 10'}}</p>
     <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
     <!--Stop modifyer used to stop propigation of mouse event-->
     - <span v-on:mousemove.stop="">DEAD SPOT</span>
@@ -12,33 +14,5 @@
     <input type="text" v-on:keyup.enter.space="alertMe">
 </div>
 
-<script>
-new Vue({
-    el: '#app',
-    data: {
-        counter: 0,
-        x: 0,
-        y: 0
-    },
-    methods: {
-        incement: function(step, event)
-        {
-            this.counter += step;
-        },
-        updateCoordinates: function(event)
-        {
-            //clientX and clientY are default proerties of event
-            this.x = event.clientX;
-            this.y = event.clientY;
-        },
-        dummy: function(event)
-        {
-            event.stopPropagation();
-        },
-        alertMe: function()
-        {
-            alert('Alert!');
-        }
-    }
-});
+<script src="scripts.js">
 </script>

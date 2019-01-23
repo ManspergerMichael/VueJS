@@ -1,0 +1,28 @@
+new Vue({
+    el: '#app',
+    data: {
+        counter: 0,
+        x: 0,
+        y: 0
+    },
+    methods: {
+        incement: function(step, event)
+        {
+            this.counter += step;
+        },
+        updateCoordinates: function(event)
+        {
+            //clientX and clientY are default proerties of event
+            this.x = event.clientX;
+            this.y = event.clientY;
+        },
+        dummy: function(event)
+        {
+            event.stopPropagation();
+        },
+        alertMe: function()
+        {
+            alert('Alert!');
+        }
+    }
+});
