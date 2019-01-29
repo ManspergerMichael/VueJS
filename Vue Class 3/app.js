@@ -12,8 +12,11 @@ new Vue({
         secondCounter: 0
         //result: ''
     },
-    computer: {
-
+    // methods in computed can be treated as variables with string introplation 
+    computed: {
+        output: function(){
+            return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
+        }
     },
     methods: {
         //cross propertiy dependanc
@@ -26,7 +29,7 @@ new Vue({
             this.result = this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
         } */
         result() {
-            return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5'
+            return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
         }
     }
 })
