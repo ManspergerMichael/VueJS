@@ -12,8 +12,13 @@ new Vue({
         result: ''
     },
     methods: {
+        //cross propertiy dependanc
         increase: function(){
             this.counter ++;
+            this.result = this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
+        },
+        decrease: function(){
+            this.counter --;
             this.result = this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
         }
     }
