@@ -13,6 +13,7 @@ new Vue({
         //result: ''
     },
     // methods in computed can be treated as variables with string introplation 
+    // computed properties are cashed, only accessed once the value changes
     computed: {
         output: function(){
             return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
@@ -34,3 +35,8 @@ new Vue({
         }
     }
 })
+
+/* "Normal" methods  always run when something changes (if you're using them in the template by calling them there).
+
+computed  property methods on the other hand don't always run and hence are more efficient/ performant. */
+
