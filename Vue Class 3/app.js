@@ -18,6 +18,7 @@ new Vue({
             return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
         }
     },
+    //Vue JS is not aware of what is in methods, need further research
     methods: {
         //cross propertiy dependanc
         /* increase: function(){
