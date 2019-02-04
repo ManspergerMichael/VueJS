@@ -9,6 +9,12 @@ new Vue({
             }
         },
         watch:{
+            value: function(val){
+                var vm = this;
+                setTimeout(function(){
+                    vm.value = 0;
+                },5000);
 
+            }
         }
     });
