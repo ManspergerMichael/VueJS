@@ -19,6 +19,16 @@ new Vue({
             return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
         }
     },
+    watch:{
+        //this function will exicute whenever the counter variable changes
+        counter: function(value){
+            var vm =this;
+            //callback function, resets the counter to 0 after 2 seconds
+            setTimeout(function(){
+                vm.counter = 0;
+            },2000)
+        }
+    },
     //Vue JS is not aware of what is in methods, need further research
     methods: {
         //cross propertiy dependanc
