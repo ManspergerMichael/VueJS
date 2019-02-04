@@ -12,13 +12,16 @@
     <p>Result: {{result()}}</p>-->
     <!--can pass changes to variables with variable names-->
 
-
+        <!--v-on: can be replaced with @click-->
     <button v-on:click="counter++">Increase</button>
     <button v-on:click="counter--">Decrease</button>
     <button v-on:click="secondCounter++">Increase Second</button>
     <button v-on:click="secondCounter--">Increase Second</button>
     <p>Counter: {{counter}} | {{secondCounter}}</p>
     <p>Result: {{result()}} | {{output}}</p>
+
+    <!-- v-bind can be replaced with :-->
+    <!-- <a :href='link'>Link</a>-->
 </div>
 <!--This gives access to the local vue script-->
 <script src="app.js"></script>
