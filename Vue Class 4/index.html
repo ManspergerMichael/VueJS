@@ -24,6 +24,13 @@
         @click="attachRed = !attachRed"
         :class="divClasses"></div>
         <div class="demo" :class="{red: attachRed}"></div>
+        <div class="demo" :class="color"></div><!--arrays of elements can be used like: <div class="demo" :class="[color, {red: attachRed"}]>-->
+        <hr>
+        <input type="text" v-model="color">
+    </div>
+    <div class="app2">
+        <div class="demo"></div>
+        <div class="demo"></div>
         <div class="demo"></div>
     </div>
     <script src="app.js"></script>

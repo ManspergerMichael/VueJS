@@ -1,7 +1,8 @@
 new Vue({
     el:'#app',
     data: {
-        attachRed: false
+        attachRed: false,
+        color: 'green'
     },
     computed:{
         divClasses: function(){
@@ -11,5 +12,15 @@ new Vue({
                 blue: !this.attachRed
             };
         }
+    }
+});
+
+new Vue({
+    el:'#app2',
+    data: {
+        color: 'gray'
+    },
+    computed: {
+
     }
 });
