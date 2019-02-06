@@ -27,11 +27,9 @@
         <div class="demo" :class="color"></div><!--arrays of elements can be used like: <div class="demo" :class="[color, {red: attachRed"}]>-->
         <hr>
         <input type="text" v-model="color">
-    </div>
-    <div class="app2">
-        <div class="demo"></div>
-        <div class="demo"></div>
-        <div class="demo"></div>
+        <hr>
+        <div class="demo" :style="{backgroundColor: color2}"></div>
+        <input type="text" v-model="color2">
     </div>
     <script src="app.js"></script>
 </body>
