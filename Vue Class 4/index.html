@@ -11,10 +11,14 @@
 </head>
 <body>
     <div id="app">
+        <!--A vueJs object
+                @click="attachRed = !attachRed switches the value from T to F and back"
+                :class is the element that will change
+                {red: attachRed, blue:!attachRed} if attachRed is true change class to red, blue if false-->
         <div 
         class="demo" 
         @click="attachRed = !attachRed"
-        :class="{red: attachRed}"></div> <!--switches attachRed property from true to false, :class is the element that will change-->
+        :class="{red: attachRed, blue:!attachRed}"></div> 
         <div class="demo" :class="{red: attachRed}"></div>
         <div class="demo"></div>
     </div>
