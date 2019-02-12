@@ -5,6 +5,7 @@ new Vue({
       highlight: false,
       shrink: true
     },
+    userClass: ''
   },
   methods: {
     startEffect: function() {
@@ -14,5 +15,5 @@ new Vue({
           vm.effectClasses.shrink = !vm.effectClasses.shrink;
       }, 1000);
     }
-  },
+  }
 });
