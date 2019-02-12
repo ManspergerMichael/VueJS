@@ -1,14 +1,18 @@
 new Vue({
   el: '#exercise',
   data: {
-    switchClass: false
-
+    effectClasses: {
+      highlight: false,
+      shrink: true
+    },
   },
   methods: {
     startEffect: function() {
-    return{
-      shrink: switchClass,
-      highilight: !switchClass}
+      var vm = this;
+      setInterval(function(){
+          vm.effectClasses.highlight = !vm.effectClasses.highlight;
+          vm.effectClasses.shrink = !vm.effectClasses.shrink;
+      }, 1000);
     }
-  }
+  },
 });
